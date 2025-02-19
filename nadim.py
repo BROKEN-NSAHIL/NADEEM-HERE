@@ -342,7 +342,7 @@ def animated_logo():
 | )  \  |  | )   ( |  | (__/  )  | (____/\  | (____/\  | )   ( |    | )   ( |  | (____/\  ___) (___
 |/    )_)  |/     \|  (______/   (_______/  (_______/  |/     \|    |/     \|  (_______/  \_______/"""
 
- for line in logo_text.splitlines():
+        for line in logo_text.splitlines():
          animated_print(line, delay=0.005, jitter=0.002)
 
 # --- Menu Function with Animated Options ---
